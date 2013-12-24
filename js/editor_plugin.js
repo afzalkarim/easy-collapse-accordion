@@ -22,7 +22,7 @@
 		},
 		getInfo : function() {
 			return {
-				longname : "WordPress Accordion",
+				longname : "Accordion Anywhere",
 				author : 'Cresencio Cantu',
 				authorurl : 'http://www.cresenciocantu.com/',
 				infourl : 'http://www.cresenciocantu.com/',

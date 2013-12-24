@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: WordPress Accordion
-Plugin URI: https://github.com/cresencio/wordpress-accordion
+Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
 Description: This plugin uses Bootstrap and jQuery to add a very basic collapsable accordion to your theme. Use your own CSS for styling  
-Version: 1.0
+Version: 0.1.0
 Author: Cresencio Cantu
 Author URI: http://www.cresenciocantu.com 
 License: GPL2
