@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: WordPress Accordion
-Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
+Plugin Name: Easy Collapse Accordion
+Plugin URI: https://github.com/cresencio/easy-collapse-accordion
 Description: This plugin uses Bootstrap and jQuery to add a very basic collapsable accordion to your theme. Use your own CSS for styling  
-Version: 0.1.0
+Version: 1.0
 Author: Cresencio Cantu
 Author URI: http://www.cresenciocantu.com 
-License: GPL2
+License: GPL2 or later
 */
 ?>
 <?php
@@ -92,7 +92,7 @@ function register_accordion_button($buttons) {
  
 // Load the TinyMCE plugin : editor_plugin.js (wp2.5)
 function add_accordion_tinymce_plugin($plugin_array) {
-   $plugin_array['youraccordion'] = plugins_url( $path = 'wordpress-accordion-master/editor_plugin.js', $plugin = 'easy-accordion' );
+   $plugin_array['youraccordion'] = plugins_url( $path = 'easy-collapse-accordion-master/editor_plugin.js', $plugin = 'easy-accordion' );
    return $plugin_array;
 }
  
@@ -112,18 +112,18 @@ add_action('init', 'add_accordion_button');
 
 if(!is_admin()){
   //register style
-  wp_register_style( 'bootstrap-accordion-styles', plugins_url().'/wordpress-accordion-master/css/bootstrap-accordion.min.css' );
+  wp_register_style( 'bootstrap-accordion-styles', plugins_url().'/easy-collapse-accordion-master/css/bootstrap-accordion.min.css' );
 
   //load style
-  wp_enqueue_style('bootstrap-accordion-styles',plugins_url().'/wordpress-accordion-master/css/bootstrap-accordion.min.css');
+  wp_enqueue_style('bootstrap-accordion-styles',plugins_url().'/easy-collapse-accordion-master/css/bootstrap-accordion.min.css');
 
 
   //load jquery
   wp_enqueue_script( 'jquery');
 
   //register script
-  wp_register_script( 'bootstrap-accordion-scripts', plugins_url().'/wordpress-accordion-master/js/bootstrap-accordion.min.js', array(), '1.0', true);
+  wp_register_script( 'bootstrap-accordion-scripts', plugins_url().'/easy-collapse-accordion-master/js/bootstrap-accordion.min.js', array(), '1.0', true);
 
   //load script
-  wp_enqueue_script('bootstrap-accordion-scripts',plugins_url().'/wordpress-accordion-master/js/bootstrap-accordion.min.js');
+  wp_enqueue_script('bootstrap-accordion-scripts',plugins_url().'/easy-collapse-accordion-master/js/bootstrap-accordion.min.js');
 }
