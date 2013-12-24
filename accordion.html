@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Accordion Builder</title>
+	<link rel="stylesheet" href="css/bootstrap-accordion.min.css">
+	<style>
+		#accordion-form h3{
+			color: black;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	<form id="accordion-form">
+		
+		<h3>Accordion name:</h3>
+		<div class="input-group">
+			<span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+			<input class="form-control" id="accordion-name" type="text" placeholder="accordion name">
+		</div>
+		<br>
+		<fieldset id="accordion-fieldset-1" class="accordion-section">
+			<h3>Section name:</h3>
+			<div class="input-group">
+				<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+				<input name="accordion-section-title" class="form-control accordion-section-title" type="text" placeholder="section name">
+			</div>
+
+			<h3>Section content:</h3>
+			
+			<div class="accordion-section-content-container">
+				<textarea name="accordion-section-content" rows="6" class="accordion-section-content form-control" placeholder="you can add HTML, plain text and shortcodes"></textarea>
+			</div>
+
+			<div class="pull-right options">
+				<label class="radio-inline">
+				  <input type="radio" class="accordion-option" name="accordion-section-option-1" value="yes" >
+				  open
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" class="accordion-option" name="accordion-section-option-1" value="no">
+				  closed
+				</label>
+			</div>
+			
+		</fieldset>
+
+		<input id="count" type="hidden" value="1">
+	</form>
+
+	<br>
+
+	<a id="add-new-button" href="#" class="btn btn-default btn-sm pull-left">add new section</a>
+
+	<hr>
+
+	<a href="javascript:AccordionTiny.insert(AccordionTiny.e)" class="btn btn-default pull-right" style="margin-bottom: 10px;">add accordion shortcode</a>
+
+	
+	<script src="../../../wp-includes/js/jquery/jquery.js"></script>
+	<script src="js/bootstrap-accordion.min.js"></script>
+	<script src="../../../wp-includes/js/tinymce/tiny_mce_popup.js"></script>
+	<script src="js/AccordionTiny.js"></script>
+	<script>
+
+		var sectionCount = 1;
+
+		jQuery("#add-new-button").click(function(event) {
+
+			var fs_temp = jQuery("#accordion-fieldset-1").html();
+
+			sectionCount++;
+			
+			jQuery("#accordion-form .accordion-section").last().after("<fieldset id='accordion-fieldset-"+sectionCount+"' class='accordion-section'>"+fs_temp+"</fieldset>");
+
+			jQuery("#accordion-fieldset-"+sectionCount+" .accordion-option").attr("name", "accordion-section-option-"+sectionCount+"");
+
+			jQuery("#count").val(sectionCount);
+			
+		});
+
+	</script>
+</body>
+</html>
