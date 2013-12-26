@@ -1,5 +1,5 @@
 === WordPress Accordion ===
-Contributors: cresencio
+Contributors: can2
 Tags: accordion, responsive, bootstrap
 Donate link: http://easydevtuts.com/
 Requires at least: 3.0.1
